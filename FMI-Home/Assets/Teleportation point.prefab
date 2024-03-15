@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   other: {fileID: 0}
-  passed: 0
+  spawnOffset: {x: 5, y: 5, z: 0}
 --- !u!61 &6468709664684491716
 BoxCollider2D:
   m_ObjectHideFlags: 0
