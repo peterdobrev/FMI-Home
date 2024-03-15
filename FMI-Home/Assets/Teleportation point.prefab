@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4032497324465389021}
   - component: {fileID: 6468709664684491716}
   m_Layer: 0
-  m_Name: Teleportation point
+  m_Name: Teleportation Point
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

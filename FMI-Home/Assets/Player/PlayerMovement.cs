@@ -18,6 +18,6 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        this.transform.position += (_direction * Time.deltaTime).normalized * speed;
+        transform.position += (_direction * Time.deltaTime).normalized * speed;
     }
 }
