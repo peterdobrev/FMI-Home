@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _direction = Vector3.zero;
 
     [SerializeField]
-    private float speed = 1f;
+    private float speed = .25f;
 
     private void Update()
     {
@@ -18,6 +18,6 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        this.transform.position += (_direction * Time.deltaTime * speed).normalized;
+        this.transform.position += (_direction * Time.deltaTime).normalized * speed;
     }
 }
