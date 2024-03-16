@@ -977,9 +977,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   username: {fileID: 556851052}
   visuals:
+  - {fileID: 1625673350, guid: c78ceffad6ef2884d92cd943a4c43500, type: 3}
+  - {fileID: -1552034675, guid: 54244125f8fa57d4785031204f7978de, type: 3}
   - {fileID: -1674925854, guid: 46e42e6c537d73d4aaee0b1a88208ede, type: 3}
-  - {fileID: -661873206, guid: acf36bf25e99f8e44aa1263efcf32093, type: 3}
   - {fileID: -1526293513, guid: 2d3fca27e205eea4988e072a4fde1403, type: 3}
+  - {fileID: -661873206, guid: acf36bf25e99f8e44aa1263efcf32093, type: 3}
   - {fileID: 74930400, guid: b658c4c8fa0bc3445b7caddc5db6b700, type: 3}
   - {fileID: -476990108, guid: 75c43e241aee5c04794e26f7ecacc63f, type: 3}
   - {fileID: 2144391662, guid: 69cc0406e324baf47b3a5c64f811620f, type: 3}
@@ -989,8 +991,6 @@ MonoBehaviour:
   - {fileID: 139723246, guid: 374e5379df2cfed4fb4d7d48e7acfd7d, type: 3}
   - {fileID: 741982798, guid: 0ca8935ab7b13014c888ad3effaca0d9, type: 3}
   - {fileID: 1006209454, guid: 2f51449e94431e74d80df1e254498a22, type: 3}
-  - {fileID: 1625673350, guid: c78ceffad6ef2884d92cd943a4c43500, type: 3}
-  - {fileID: -1552034675, guid: 54244125f8fa57d4785031204f7978de, type: 3}
   - {fileID: 1144752563, guid: 4d9369fcc7302264ba958039b1405070, type: 3}
   - {fileID: -1533348791, guid: db27fbca3ac89224891d9dad524010ed, type: 3}
   - {fileID: -1983946296, guid: a9530abd2353f57468a08ecf2b72f803, type: 3}
