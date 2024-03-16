@@ -1,6 +1,7 @@
 using UnityEngine;
 using Photon.Pun;
 using UnityStandardAssets.CrossPlatformInput;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float speed = .25f;
 
+    [SerializeField]
+    private TMP_Text username;
+
     private PhotonView view;
 
     private void Start()
@@ -19,7 +23,10 @@ public class PlayerMovement : MonoBehaviour
         // InitializeComponents();
         view = GetComponent<PhotonView>();
 
+        username.text = CustomizePlayer._username;
         _animator.SetInteger("Character", CustomizePlayer.currentSprite);
+
+        Debug.Log(_animator.GetCurrentAnimatorClipInfo(0)); 
     }
 
     private void Update()

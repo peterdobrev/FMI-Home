@@ -11,9 +11,6 @@ public class CustomizePlayer : MonoBehaviour
     TMP_InputField username;
 
     [SerializeField]
-    TMP_InputField facultyNumber;
-
-    [SerializeField]
     List<Sprite> visuals = new List<Sprite>();
 
     [SerializeField]
@@ -50,23 +47,9 @@ public class CustomizePlayer : MonoBehaviour
         ApplySprite();
     }
 
-    public void EnterGame()
-    {
-        
-    }
-
-    public string GetFacultyNumber()
-    {
-        return facultyNumber.text;
-    }
-
-    public string GetUsername()
-    {
-        return username.text;
-    }
-
     public void EnterLoading()
     {
+        Debug.Log(currentSprite);
         _username = username.text;
         SceneManager.LoadScene("Loading");
     }
