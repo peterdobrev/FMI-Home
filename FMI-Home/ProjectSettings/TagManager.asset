@@ -42,3 +42,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: WallsUp
+    uniqueID: 2432781081
+    locked: 0
+  - name: Player
+    uniqueID: 1338337235
+    locked: 0
+  - name: WallsDown
+    uniqueID: 2018487289
+    locked: 0
+  - name: Hanging
+    uniqueID: 400355219
+    locked: 0
