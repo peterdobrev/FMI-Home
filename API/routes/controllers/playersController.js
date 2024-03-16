@@ -32,4 +32,22 @@ const createPlayer = async (req, res) => {
     };
 };
 
-module.exports = { getPlayers, getPlayerByID, createPlayer };
+const updatePlayer = async (req, res) => {
+    try {
+        const player = await Player.findOneAndUpdate({ _id: req.params.playerID }, req.body);
+        res.status(200).json(player);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+
+const deletePlayer = async (req, res) => {
+    try {
+        await Player.findOneAndDelete({ _id: req.params.playerID });
+        res.status(200).json({ message: `Player with id: ${req.params.playerID} has been successfully deleted!` });
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    };
+};
+
+module.exports = { getPlayers, getPlayerByID, createPlayer, updatePlayer, deletePlayer };
