@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 783943150842607893}
-  speed: 0.25
+  speed: 0.1
 --- !u!114 &5817712301279505831
 MonoBehaviour:
   m_ObjectHideFlags: 0

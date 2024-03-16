@@ -29,7 +29,7 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log("Joined room: " + PhotonNetwork.CurrentRoom.Name);
-        PhotonNetwork.LoadLevel("MovementScene");
+        PhotonNetwork.LoadLevel("MainScene");
     }
 
     public override void OnJoinRoomFailed(short returnCode, string message)
