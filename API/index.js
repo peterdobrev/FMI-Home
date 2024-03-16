@@ -3,6 +3,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const compression = require("compression");
+const routes = require("./routes/index.js");
 
 require("dotenv").config();
 require("./config/db.js");
@@ -15,7 +16,7 @@ app.use(compression());
 app.use(helmet());
 app.use(morgan('dev'));
 
-// app.use("/api", routes);
+app.use("/api", routes);
 
 const port = process.env.PORT || 7000;
 app.listen(port, () => console.log(`Listening on port: ${port}!`));

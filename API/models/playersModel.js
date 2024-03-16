@@ -10,4 +10,4 @@ const joiPlayerSchema = Joi.object({
 
 const mongoosePlayerSchema = new mongoose.Schema(Joigoose.convert(joiPlayerSchema));
 const Player = mongoose.model("players", mongoosePlayerSchema, "players");
-module.exports = { Player };
+module.exports = Player;
