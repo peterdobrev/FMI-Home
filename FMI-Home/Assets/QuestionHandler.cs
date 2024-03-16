@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class QuestionHandler : MonoBehaviour
 {
-    [SerializeField]
     private QuestionData questionData;
 
     [SerializeField]
@@ -18,6 +17,10 @@ public class QuestionHandler : MonoBehaviour
 
     void OnEnable()
     {
+        QuestionBank questionBank = new QuestionBank(); // Initialize the question bank
+        questionData = questionBank.GetRandomQuestion(); // Get a random question
+
+
         textQuestion.text = questionData.questionText;
         textAnswerA.text = questionData.answerA;
         textAnswerB.text = questionData.answerB;

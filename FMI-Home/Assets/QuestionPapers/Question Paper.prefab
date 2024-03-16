@@ -154,7 +154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7641944848796919336
 RectTransform:
   m_ObjectHideFlags: 0
@@ -224,7 +224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bff148dc1590ad4a8b703098b191a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionData: {fileID: 11400000, guid: 1df359fb37e7ebe4a8e6f68799484f8b, type: 2}
   textQuestion: {fileID: 5410200915954212932}
   textAnswerA: {fileID: 1115497972754953629}
   textAnswerB: {fileID: 8031346007146098626}
