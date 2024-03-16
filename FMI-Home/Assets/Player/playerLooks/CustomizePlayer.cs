@@ -26,6 +26,7 @@ public class CustomizePlayer : MonoBehaviour
     private void ApplySprite()
     {
         profilePicture.sprite = visuals[currentSprite];
+        profilePicture.GetComponent<RectTransform>().sizeDelta = visuals[currentSprite].bounds.size * 3500;
     }
 
     public void nextSprite()
