@@ -11,7 +11,10 @@ const getPlayers = async (req, res) => {
 
 const getPlayerByID = async (req, res) => {
     try {
-        const player = await Player.findById(req.params.playerID);
+        const player = await Player.findOne({
+            playerName: req.params.playerName,
+            facultyNumber: req.params.facultyNumber
+        });
 
         player ? 
             res.status(200).json(player) :

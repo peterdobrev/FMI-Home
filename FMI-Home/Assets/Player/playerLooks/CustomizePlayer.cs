@@ -11,6 +11,9 @@ public class CustomizePlayer : MonoBehaviour
     TMP_InputField username;
 
     [SerializeField]
+    TMP_InputField facultyNumber;
+
+    [SerializeField]
     List<Sprite> visuals = new List<Sprite>();
 
     [SerializeField]
@@ -44,6 +47,16 @@ public class CustomizePlayer : MonoBehaviour
         if (currentSprite < 0)
             currentSprite = visuals.Count - 1;
         ApplySprite();
+    }
+
+    public void EnterGame()
+    {
+        
+    }
+
+    public string GetFacultyNumber()
+    {
+        return facultyNumber.text;
     }
 
     public string GetUsername()
