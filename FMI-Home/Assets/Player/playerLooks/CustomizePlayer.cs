@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CustomizePlayer : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class CustomizePlayer : MonoBehaviour
     [SerializeField]
     Image profilePicture;
 
-    private int currentSprite = 0;
+    public static int currentSprite = 0;
 
     private void Awake()
     {
@@ -26,7 +27,7 @@ public class CustomizePlayer : MonoBehaviour
     private void ApplySprite()
     {
         profilePicture.sprite = visuals[currentSprite];
-        profilePicture.GetComponent<RectTransform>().sizeDelta = visuals[currentSprite].bounds.size * 3500;
+        profilePicture.GetComponent<RectTransform>().sizeDelta = visuals[currentSprite].bounds.size.normalized * 125;
     }
 
     public void nextSprite()
@@ -45,8 +46,13 @@ public class CustomizePlayer : MonoBehaviour
         ApplySprite();
     }
 
-    string GetUsername()
+    public string GetUsername()
     {
         return username.text;
+    }
+
+    public void EnterLoading()
+    {
+        SceneManager.LoadScene("Loading");
     }
 }

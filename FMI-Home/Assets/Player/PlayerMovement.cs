@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     {
         // InitializeComponents();
         view = GetComponent<PhotonView>();
+
+        _animator.SetInteger("Character", CustomizePlayer.currentSprite);
     }
 
     private void Update()
@@ -27,20 +29,10 @@ public class PlayerMovement : MonoBehaviour
             _direction.x = Input.GetAxisRaw("Horizontal");
             _direction.y = Input.GetAxisRaw("Vertical");
 
-            if ((_direction.x * speed) > 0) Flip(false); else Flip(true);
-            // _playerAnimation.Move(_direction.x * speed);
-
-            _animator.SetFloat("Horizontal", _direction.x);
-            _animator.SetFloat("Vertical", _direction.y);
-            _animator.SetFloat("Speed", _direction.sqrMagnitude);
+            _animator.SetFloat("X", _direction.x);
+            _animator.SetFloat("Y", _direction.y);
+            _animator.SetBool("moving", _direction != Vector3.zero);
         }
-    }
-
-    private void Flip(bool flipSprite)
-    {
-        Vector3 theScale = transform.localScale;
-        theScale.x = flipSprite ? Mathf.Abs(theScale.x) * -1 : Mathf.Abs(theScale.x);
-        transform.localScale = theScale;
     }
 
     void FixedUpdate()
