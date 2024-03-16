@@ -17,6 +17,7 @@ public class CustomizePlayer : MonoBehaviour
     Image profilePicture;
 
     public static int currentSprite = 0;
+    public static string _username;
 
     private void Awake()
     {
@@ -46,13 +47,9 @@ public class CustomizePlayer : MonoBehaviour
         ApplySprite();
     }
 
-    public string GetUsername()
-    {
-        return username.text;
-    }
-
     public void EnterLoading()
     {
+        _username = username.text;
         SceneManager.LoadScene("Loading");
     }
 }
