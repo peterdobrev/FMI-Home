@@ -1,66 +1,11 @@
-# v. 16.03 13:00
+FMI-Arcade
 
-#### Проблемът 
+Do you want to reconnect with your friends from FMI? Now you can, even if you're miles apart.
 
-често искаме да сме на 2 места едновременно
+FMI-Arcade is a virtual reality project designed to bring our favorite parts of FMI to life, allowing you to explore them, collect scattered questions throughout the rooms, and engage in coffee-fueled chats with your friends.
 
-от удобстовото на дома да извършваме дейности по задълженията си
+This unique solution addresses the challenges of our fast-paced lives; it's not just another communication application. By integrating virtual reality, FMI-Arcade offers a deeper connection, immersing you in an experience that feels remarkably real.
 
-да се осъществява връзка с хора каот на живо, без ограничение от локацията
+While this demo showcases the core concept, there's immense potential for expansion. Additional mini-games could be introduced in new rooms to keep you entertained and provide more reasons to gather. Furthermore, streaming lectures could be integrated to enhance accessibility for a wider audience. Imagine having a challenging math problem – you could jot it down on a virtual board on the fifth floor and see if someone can crack it. And if you're looking to study or teach, virtual blackboards could facilitate collaborative learning sessions.
 
-без да жертваме реалмния контакт, да бъдем също толкова свързани
-
-
-ФМИ е само в софия - но това не означава, че когато сте в родния си град, сте изолирани от колегите си. Напротив, все по-близо сме от всякога.
-
-#### Решението
-
-Виртуалната среда на FMI.Home, позволява да се свържем с колегите си без ограничение от локацията. 
-
-Симулацията позволява усещане за среща в изтинския свят, за разлика от обикновените решения в сферата (например дискорд)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# v. 15.03 21:00
-
-#### Какво представлява FMI.Home?
-- Паралелна вселена
-- Виртуална реалност
-- Геймификация
-- Свързване на хора във ФМИ, независимо от локацията
-- Възжожност за разговори, за създаване и поддържане на контакти с хора от ФМИ и от близки до вашата професия, без ограничение от място и час, изцяло онлайн.
-- за хората които вс еоще не живеят във ФМИ, вече можете да посещавате факултета директно от дома си или където и да сте.
-- можете да поддържате връзка с хората от ФМИ, в удобството на виртуална среда - дори когато би било невъзможно да осъществите среща
-- позволява осъществяване на нови запознанства
-
-- за хора които са се прибрали в родния си град, вече не са изолирани за периода в който не са в софия
-
-#### Проблемът
-- Понякога искаме или ни се налага да сме на две места едновремено
-- Понякога искаме да се свържем с колега или колежка за съвместна работа - и се нуждаем от повече от чат за да се потопим в работна среда. Дори и за разговор помеждудругото - правилната дигитална среда може да създаде усещане истинско преживяване.
-- ФМИ е само в София. Не бихте ли искали да е и във всеки друг град, включително и във вашия роден град? И всички ваши проиятели, колеги и асистенти да са точно там?
-- Не бихте ли искали да посетите лекция, семинар, или събитие, дори когато не сте в града или нямате възможност поради други причини?
-- Колко хубаво би било, където и да сте, фми да бъде на няколко секунди растояние? на няколко клика?
-
-
-
-
-
-# Random stuff
-With a virtual office, distributed coworkers can talk naturally throughout the day, feel like you’re actually working together, and share moments that don’t have to be scheduled.
-
-
+With FMI-Arcade, the possibilities are endless; your imagination sets the boundari
