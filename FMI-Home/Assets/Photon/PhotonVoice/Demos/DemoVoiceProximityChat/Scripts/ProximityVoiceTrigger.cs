@@ -14,6 +14,10 @@ public class ProximityVoiceTrigger : VoiceComponent
     private List<byte> groupsToAdd = new List<byte>();
     private List<byte> groupsToRemove = new List<byte>();
 
+    [SerializeField] private float maxHearingDistance = 10f;
+    [SerializeField] private float minVolume = 0.1f;
+    [SerializeField] private float maxVolume = 1.0f;
+
     [SerializeField] // TODO: make it readonly
     private byte[] subscribedGroups;
 
@@ -31,6 +35,8 @@ public class ProximityVoiceTrigger : VoiceComponent
             return 0;
         }
     }
+
+
 
     protected override void Awake()
     {
@@ -185,5 +191,32 @@ public class ProximityVoiceTrigger : VoiceComponent
         return false;
     }
 
+    private void AdjustVolumeBasedOnDistance()
+    {
+        // Assuming you have a way to iterate over all relevant players and their Speaker components
+        foreach (var speaker in FindObjectsOfType<Photon.Voice.Unity.Speaker>())
+        {
+            if (speaker.IsLinked && speaker.gameObject != this.gameObject)
+            {
+                float distance = Vector3.Distance(this.transform.position, speaker.transform.position);
+                float volume = CalculateVolume(distance);
+                speaker.transform.parent.GetComponent<AudioSource>().volume = volume;
+            }
+        }
+    }
+
+    private float CalculateVolume(float distance)
+    {
+        if (distance >= maxHearingDistance)
+        {
+            return minVolume;
+        }
+        else
+        {
+            return Mathf.Lerp(maxVolume, minVolume, distance / maxHearingDistance);
+        }
+    }
+
 }
+
 #endif

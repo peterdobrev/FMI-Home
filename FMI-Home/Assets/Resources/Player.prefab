@@ -271,7 +271,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1
+  m_Radius: 7
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &977234146035577232
 Rigidbody:
@@ -312,6 +312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f52792dd821664a896b3c1c0418b9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHearingDistance: 10
+  minVolume: 0.1
+  maxVolume: 1
   subscribedGroups: 
 --- !u!1 &2970296104577288975
 GameObject:
