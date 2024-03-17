@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 
 public class CustomizePlayer : MonoBehaviour
 {
@@ -49,8 +50,14 @@ public class CustomizePlayer : MonoBehaviour
 
     public void EnterLoading()
     {
-        Debug.Log(currentSprite);
-        _username = username.text;
-        SceneManager.LoadScene("Loading");
+        var props = new ExitGames.Client.Photon.Hashtable
+    {
+        {"username", username.text},
+        {"skinIndex", currentSprite}
+    };
+        PhotonNetwork.LocalPlayer.SetCustomProperties(props);
+
+        PhotonNetwork.LoadLevel("Loading");
     }
+
 }

@@ -470,7 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 6431143867631414757}
   speed: 0.1
-  username: {fileID: 6991652547439188994}
+  usernameText: {fileID: 6991652547439188994}
 --- !u!114 &5817712301279505831
 MonoBehaviour:
   m_ObjectHideFlags: 0
