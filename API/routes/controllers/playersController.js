@@ -2,8 +2,8 @@ const Player = require("../../models/playersModel.js");
 
 const getPlayers = async (req, res) => {
     try {
-        const products = await Player.find({}).sort({ _id: 1 });
-        res.status(200).send({ products: products });
+        const players = await Player.find({}).sort({ _id: 1 });
+        res.status(200).send({ players: players });
     } catch (err) {
         res.status(500).send({ message: err.message });
     };
