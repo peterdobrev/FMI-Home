@@ -21,7 +21,7 @@ public class QuestionBank
         AddQuestion("Which theorem is used to calculate the distance between two points in a coordinate plane?", "Pythagorean Theorem", "Fermat's Last Theorem", 0);
         AddQuestion("What term describes a polygon with all sides and angles equal?", "Regular Polygon", "Irregular Polygon", 0);
         AddQuestion("In Euclidean geometry, how many degrees are in the sum of the angles of a quadrilateral?", "360 degrees", "180 degrees", 0);
-        AddQuestion("What is the formula to calculate the area of a circle?", "(pi*r)^2", "2*pi*r", 0);
+        AddQuestion("What is the formula to calculate the area of a circle?", "pi*r^2", "2*pi*r", 0);
         AddQuestion("Which geometric concept is defined as the set of all points in a plane at a given distance from a given point?", "Circle", "Polygon", 0);
         AddQuestion("What is a Finite Automaton?", "A mathematical model of computation that performs calculations automatically", "A device that automatically supplies a constant voltage", 0);
         AddQuestion("Which of the following is NOT a type of automaton?", "Deterministic Finite Automaton (DFA)", "Recursive Enumerable Automaton (REA)", 1);
