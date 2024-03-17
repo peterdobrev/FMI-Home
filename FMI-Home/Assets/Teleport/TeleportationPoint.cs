@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TeleportationPoint : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class TeleportationPoint : MonoBehaviour
 
     [SerializeField]
     private Vector3 spawnOffset = Vector2.zero;
+
+    public UnityEvent onTeleportFromHere;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,6 +20,8 @@ public class TeleportationPoint : MonoBehaviour
         if (other == null) return;
 
         collision.gameObject.transform.position = other.transform.position + spawnOffset;
+
+        onTeleportFromHere.Invoke();
     }
 
 }

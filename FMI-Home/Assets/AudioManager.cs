@@ -27,7 +27,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource2 = gameObject.GetComponentInChildren<AudioSource>();
+        audioSource2 = transform.GetChild(0).GetComponent<AudioSource>();
         StartCoroutine(PlaySongsWithDelay());
     }
 
@@ -48,8 +48,8 @@ public class AudioManager : MonoBehaviour
 
     public void PlayButtonSound()
     {
-        audioSource.clip = buttonClick;
+        audioSource2.clip = buttonClick;
 
-        audioSource.Play();
+        audioSource2.Play();
     }
 }
