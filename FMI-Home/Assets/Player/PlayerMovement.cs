@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
 
             speed += 0.08f;
 
-            Invoke("Deboost", 4f);
+            Invoke("Deboost", 50f);
         }
     }
 
