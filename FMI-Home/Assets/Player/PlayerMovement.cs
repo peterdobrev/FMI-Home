@@ -1,8 +1,9 @@
 using UnityEngine;
 using Photon.Pun;
 using UnityStandardAssets.CrossPlatformInput;
+using TMPro;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviourPunCallbacks
 {
     private Vector3 _direction = Vector3.zero;
 
@@ -12,15 +13,74 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float speed = .25f;
 
+    private bool boosted = false;
+
+    [SerializeField]
+    private TMP_Text usernameText;
+
     private PhotonView view;
+
+    private void Awake()
+    {
+        view = GetComponent<PhotonView>();
+    }
 
     private void Start()
     {
-        // InitializeComponents();
-        view = GetComponent<PhotonView>();
-
-        _animator.SetInteger("Character", CustomizePlayer.currentSprite);
+        UpdatePlayerAppearance();
     }
+
+    public void Boost()
+    {
+        if (boosted) return;
+        boosted = true;
+
+        speed += 0.25f;
+    }
+
+    private void Deboost()
+    {
+        speed -= 0.25f;
+        boosted = false;
+    }
+
+    private void UpdatePlayerAppearance()
+    {
+        if (photonView.IsMine)
+        {
+            // If this is the local player, set the properties from the local saved data.
+            object username;
+            if (PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue("username", out username))
+            {
+                Debug.Log((string)username);
+                usernameText.text = (string)username;
+            }
+
+            object skinIndex;
+            if (PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue("skinIndex", out skinIndex))
+            {
+                Debug.Log((int)skinIndex);
+                _animator.SetInteger("Character", (int)skinIndex);
+            }
+        }
+        else
+        {
+            // For other players, use their custom properties.
+            object username;
+            if (photonView.Owner.CustomProperties.TryGetValue("username", out username))
+            {
+                usernameText.text = (string)username;
+            }
+
+            object skinIndex;
+            if (photonView.Owner.CustomProperties.TryGetValue("skinIndex", out skinIndex))
+            {
+                _animator.SetInteger("Character", (int)skinIndex);
+            }
+        }
+    }
+
+
 
     private void Update()
     {
@@ -38,5 +98,18 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         transform.position += (_direction * Time.fixedDeltaTime).normalized * speed;
+    }
+
+    public override void OnPlayerPropertiesUpdate(Photon.Realtime.Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
+    {
+        base.OnPlayerPropertiesUpdate(targetPlayer, changedProps);
+
+        // Check if the targetPlayer is the owner of this photonView
+        if (targetPlayer == photonView.Owner)
+        {
+            // Update appearance if relevant properties have changed.
+            // You can check for specific keys in changedProps if necessary
+            UpdatePlayerAppearance();
+        }
     }
 }

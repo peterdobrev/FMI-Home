@@ -175,7 +175,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2466900255988249664
 CanvasRenderer:
@@ -224,7 +224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bff148dc1590ad4a8b703098b191a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionData: {fileID: 11400000, guid: 1df359fb37e7ebe4a8e6f68799484f8b, type: 2}
   textQuestion: {fileID: 5410200915954212932}
   textAnswerA: {fileID: 1115497972754953629}
   textAnswerB: {fileID: 8031346007146098626}
@@ -262,10 +261,10 @@ RectTransform:
   - {fileID: 4033955435056925696}
   m_Father: {fileID: 7641944848796919336}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.17, y: 0.40625003}
-  m_AnchorMax: {x: 0.86375004, y: 0.5324999}
-  m_AnchoredPosition: {x: -17, y: -108}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -120}
+  m_SizeDelta: {x: 496, y: 77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1567824492230190184
 CanvasRenderer:
@@ -665,10 +664,10 @@ RectTransform:
   - {fileID: 9194717952479794051}
   m_Father: {fileID: 7641944848796919336}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.17, y: 0.40625003}
-  m_AnchorMax: {x: 0.86375004, y: 0.5324999}
-  m_AnchoredPosition: {x: -20, y: -237}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -200}
+  m_SizeDelta: {x: 496, y: 77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1453773273433728552
 CanvasRenderer:
