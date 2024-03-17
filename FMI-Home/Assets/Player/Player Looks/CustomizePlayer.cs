@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
@@ -8,6 +9,10 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
 using SimpleJSON;
+using UnityEngine.Networking;
+using System.Text;
+using System.Collections.Specialized;
+using System.Net.Http;
 
 public class CustomizePlayer : MonoBehaviour
 {
@@ -55,19 +60,6 @@ public class CustomizePlayer : MonoBehaviour
         ApplySprite();
     }
 
-    public void EnterLoading()
-    {
-        var props = new ExitGames.Client.Photon.Hashtable
-    {
-        {"username", username.text},
-        {"facultyNumber", facultyNumber.text},
-        {"skinIndex", currentSprite}
-    };
-        PhotonNetwork.LocalPlayer.SetCustomProperties(props);
-
-        PhotonNetwork.LoadLevel("Loading");
-    }
-
     public void GetRequest()
     {
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"{URI}/{username.text}/{facultyNumber.text}");
@@ -80,13 +72,51 @@ public class CustomizePlayer : MonoBehaviour
 
             PlayerDataArray playerDataArray = JsonUtility.FromJson<PlayerDataArray>(wrappedJson);
 
-            // foreach (PlayerData playerData in playerDataArray.data)
-            // {
-            //     Debug.Log("ID: " + playerData._id);
-            //     Debug.Log("Name: " + playerData.playerName);
-            //     Debug.Log("Faculty Number: " + playerData.facultyNumber);
-            //     Debug.Log("Points: " + playerData.points);
-            // }
+            if (playerDataArray.data.Count <= 0)
+            {
+                try
+                {
+                    HttpWebRequest postRequest = (HttpWebRequest)WebRequest.Create(URI);
+                    postRequest.Method = "POST";
+                    postRequest.ContentType = "application/json";
+
+                    string jsonData = $@"{{
+                    ""playerName"": ""{username.text}"",
+                    ""facultyNumber"": ""{facultyNumber.text}"",
+                    ""points"": ""0""
+                }}";
+
+                    using (StreamWriter postWriter = new StreamWriter(postRequest.GetRequestStream()))
+                        postWriter.Write(jsonData);
+
+                    using (HttpWebResponse postResponse = (HttpWebResponse)postRequest.GetResponse())
+                    {
+                        if (postResponse.StatusCode == HttpStatusCode.OK ||
+                            postResponse.StatusCode == HttpStatusCode.Created)
+                            EnterLoading();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogError("Error sending POST request: " + ex.Message);
+                }
+            }
         }
+
+        if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Created)
+            EnterLoading();
+    }
+
+    public void EnterLoading()
+    {
+        var props = new ExitGames.Client.Photon.Hashtable
+    {
+        {"username", username.text},
+        {"facultyNumber", facultyNumber.text},
+        {"skinIndex", currentSprite}
+    };
+        PhotonNetwork.LocalPlayer.SetCustomProperties(props);
+
+        PhotonNetwork.LoadLevel("Loading");
     }
 }
