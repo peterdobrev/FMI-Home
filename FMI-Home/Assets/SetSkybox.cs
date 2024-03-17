@@ -27,7 +27,6 @@ public class SetSkybox : MonoBehaviour
     void Start()
     {
         ChangeClearColorToBlack(); // To set the clear color to black on start
-        // Or
         // ChangeClearColorToSkyBlue(); // To set the clear color to sky blue on start
     }
 }
