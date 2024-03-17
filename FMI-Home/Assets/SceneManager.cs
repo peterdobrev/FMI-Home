@@ -7,6 +7,6 @@ public class SceneManager : MonoBehaviour
 {
     public void LoadSelection()
     {
-        PhotonNetwork.LoadLevel("selectScene");
+        PhotonNetwork.LoadLevel("selectPlayer");
     }
 }
