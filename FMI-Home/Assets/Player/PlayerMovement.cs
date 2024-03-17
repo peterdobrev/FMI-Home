@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float speed = .25f;
 
+    private bool boosted = false;
+
     [SerializeField]
     private TMP_Text username;
 
@@ -23,10 +25,25 @@ public class PlayerMovement : MonoBehaviour
         // InitializeComponents();
         view = GetComponent<PhotonView>();
 
-        username.text = CustomizePlayer._username;
-        _animator.SetInteger("Character", CustomizePlayer.currentSprite);
+        if (view != null && view.IsMine)
+        {
+            username.text = CustomizePlayer._username;
+            _animator.SetInteger("Character", CustomizePlayer.currentSprite);
+        }
+    }
 
-        Debug.Log(_animator.GetCurrentAnimatorClipInfo(0)); 
+    public void Boost()
+    {
+        if (boosted) return;
+        boosted = true;
+
+        speed += 0.25f;
+    }
+
+    private void Deboost()
+    {
+        speed -= 0.25f;
+        boosted = false;
     }
 
     private void Update()
