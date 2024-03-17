@@ -46,9 +46,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public static void PlayButtonSound()
+    public void PlayButtonSound()
     {
         audioSource.clip = buttonClick;
+
         audioSource.Play();
     }
 }
