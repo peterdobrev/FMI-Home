@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
     [SerializeField]
     private float speed = .25f;
 
+    private bool boosted = false;
+
     [SerializeField]
     private TMP_Text usernameText;
 
@@ -27,6 +29,21 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
     {
         UpdatePlayerAppearance();
     }
+
+    public void Boost()
+    {
+        if (boosted) return;
+        boosted = true;
+
+        speed += 0.25f;
+    }
+
+    private void Deboost()
+    {
+        speed -= 0.25f;
+        boosted = false;
+    }
+
     private void UpdatePlayerAppearance()
     {
         if (photonView.IsMine)
