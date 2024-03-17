@@ -32,16 +32,24 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
 
     public void Boost()
     {
-        if (boosted) return;
-        boosted = true;
+        if (photonView.IsMine)
+        {
+            if (boosted) return;
+            boosted = true;
 
-        speed += 0.25f;
+            speed += 0.08f;
+
+            Invoke("Deboost", 40f);
+        }
     }
 
     private void Deboost()
     {
-        speed -= 0.25f;
-        boosted = false;
+        if (photonView.IsMine)
+        {
+            speed -= 0.08f;
+            boosted = false;
+        }
     }
 
     private void UpdatePlayerAppearance()
@@ -97,7 +105,8 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
 
     void FixedUpdate()
     {
-        transform.position += (_direction * Time.fixedDeltaTime).normalized * speed;
+        transform.position += _direction.normalized * speed;
+        Debug.Log(speed);
     }
 
     public override void OnPlayerPropertiesUpdate(Photon.Realtime.Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)

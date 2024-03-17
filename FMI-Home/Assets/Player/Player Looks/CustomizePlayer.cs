@@ -1,15 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
+using SimpleJSON;
 
 public class CustomizePlayer : MonoBehaviour
 {
     [SerializeField]
     TMP_InputField username;
+
+    [SerializeField]
+    TMP_InputField facultyNumber;
 
     [SerializeField]
     List<Sprite> visuals = new List<Sprite>();
@@ -18,7 +24,8 @@ public class CustomizePlayer : MonoBehaviour
     Image profilePicture;
 
     public static int currentSprite = 0;
-    public static string _username;
+
+    private string URI = "https://fmi-home.onrender.com/api/players";
 
     private void Awake()
     {
@@ -53,6 +60,7 @@ public class CustomizePlayer : MonoBehaviour
         var props = new ExitGames.Client.Photon.Hashtable
     {
         {"username", username.text},
+        {"facultyNumber", facultyNumber.text},
         {"skinIndex", currentSprite}
     };
         PhotonNetwork.LocalPlayer.SetCustomProperties(props);
@@ -60,4 +68,25 @@ public class CustomizePlayer : MonoBehaviour
         PhotonNetwork.LoadLevel("Loading");
     }
 
+    public void GetRequest()
+    {
+        HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"{URI}/{username.text}/{facultyNumber.text}");
+        HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+        using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+        {
+            string json = reader.ReadToEnd();
+            string wrappedJson = "{\"data\":" + json + "}";
+
+            PlayerDataArray playerDataArray = JsonUtility.FromJson<PlayerDataArray>(wrappedJson);
+
+            // foreach (PlayerData playerData in playerDataArray.data)
+            // {
+            //     Debug.Log("ID: " + playerData._id);
+            //     Debug.Log("Name: " + playerData.playerName);
+            //     Debug.Log("Faculty Number: " + playerData.facultyNumber);
+            //     Debug.Log("Points: " + playerData.points);
+            // }
+        }
+    }
 }
