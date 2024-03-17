@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5665386825385305552}
   - component: {fileID: 4963619948388185055}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3053182286866887282}
   - component: {fileID: 8003446880772180598}
   - component: {fileID: 6991652547439188994}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 6318667886218259249}
   - component: {fileID: 977234146035577232}
   - component: {fileID: 7810943412367542712}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ProximityVoiceChat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 6431143867631414757}
   - component: {fileID: 8631240334470220157}
   - component: {fileID: 2498225076371690456}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -518,7 +518,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -618,7 +618,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 3388943667917176067}
   - component: {fileID: 4858547766502543532}
   - component: {fileID: 2496077477627237199}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -751,7 +751,7 @@ GameObject:
   - component: {fileID: 6699931074507745215}
   - component: {fileID: 6721339215142699544}
   - component: {fileID: 2806934473638012982}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Speaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
