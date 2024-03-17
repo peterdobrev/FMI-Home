@@ -3,7 +3,7 @@ const Player = require("../../models/playersModel.js");
 const getPlayers = async (req, res) => {
     try {
         const products = await Player.find({}).sort({ _id: 1 });
-        res.status(200).send(products);
+        res.status(200).send({ products: products });
     } catch (err) {
         res.status(500).send({ message: err.message });
     };
@@ -11,7 +11,7 @@ const getPlayers = async (req, res) => {
 
 const getPlayerByID = async (req, res) => {
     try {
-        const player = await Player.findOne({
+        const player = await Player.find({
             playerName: req.params.playerName,
             facultyNumber: req.params.facultyNumber
         });
