@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
 
             speed += 0.08f;
 
-            Invoke("Deboost", 40f);
+            Invoke("Deboost", 50f);
         }
     }
 
@@ -106,7 +106,6 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
     void FixedUpdate()
     {
         transform.position += _direction.normalized * speed;
-        Debug.Log(speed);
     }
 
     public override void OnPlayerPropertiesUpdate(Photon.Realtime.Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)

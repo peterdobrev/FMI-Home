@@ -25,6 +25,7 @@ public class CoffeeMachine : MonoBehaviour
         if (coffeeCount > 3)
             return;
 
+        coffeeCount++;
         Instantiate(coffee, new Vector3(Random.Range(topLeft.x, bottomRight.x), Random.Range(topLeft.y, bottomRight.y), transform.position.z) + transform.position, Quaternion.identity, this.transform);
     }
 
