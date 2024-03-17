@@ -1,18 +1,8 @@
-using System;
-using System.Collections;
+using Photon.Pun;
 using System.Collections.Generic;
-using System.Net;
-using System.IO;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using UnityEngine.SceneManagement;
-using Photon.Pun;
-using SimpleJSON;
-using UnityEngine.Networking;
-using System.Text;
-using System.Collections.Specialized;
-using System.Net.Http;
 
 public class CustomizePlayer : MonoBehaviour
 {
@@ -30,7 +20,7 @@ public class CustomizePlayer : MonoBehaviour
 
     public static int currentSprite = 0;
 
-    private string URI = "https://fmi-home.onrender.com/api/players";
+    //private string URI = "https://fmi-home.onrender.com/api/players";
 
     private void Awake()
     {
@@ -59,7 +49,7 @@ public class CustomizePlayer : MonoBehaviour
             currentSprite = visuals.Count - 1;
         ApplySprite();
     }
-
+    /*
     public void GetRequest()
     {
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"{URI}/{username.text}/{facultyNumber.text}");
@@ -106,7 +96,7 @@ public class CustomizePlayer : MonoBehaviour
         if (response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.Created)
             EnterLoading();
     }
-
+    */
     public void EnterLoading()
     {
         var props = new ExitGames.Client.Photon.Hashtable
