@@ -924,6 +924,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 727800430}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &622737739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1253,6 +1265,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677318169}
   m_CullTransparentMesh: 1
+--- !u!1 &727800429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 727800431}
+  - component: {fileID: 727800430}
+  m_Layer: 0
+  m_Name: PlaySound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &727800430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727800429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6981a6de3f201654cafa18822a5f49f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &727800431
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727800429}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &790525266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1511,26 +1567,6 @@ MonoBehaviour:
   - {fileID: -1552034675, guid: 54244125f8fa57d4785031204f7978de, type: 3}
   - {fileID: -1674925854, guid: 46e42e6c537d73d4aaee0b1a88208ede, type: 3}
   - {fileID: -1526293513, guid: 2d3fca27e205eea4988e072a4fde1403, type: 3}
-  - {fileID: -661873206, guid: acf36bf25e99f8e44aa1263efcf32093, type: 3}
-  - {fileID: 74930400, guid: b658c4c8fa0bc3445b7caddc5db6b700, type: 3}
-  - {fileID: -476990108, guid: 75c43e241aee5c04794e26f7ecacc63f, type: 3}
-  - {fileID: 2144391662, guid: 69cc0406e324baf47b3a5c64f811620f, type: 3}
-  - {fileID: -1711575102, guid: a10d3533f479be34899afdbef0a3b278, type: 3}
-  - {fileID: 391962555, guid: 63980c0bc8dcb3549b3451d00cbb73ab, type: 3}
-  - {fileID: -1917119704, guid: 7524faecd709a1c408dd3975428ca4f1, type: 3}
-  - {fileID: 139723246, guid: 374e5379df2cfed4fb4d7d48e7acfd7d, type: 3}
-  - {fileID: 741982798, guid: 0ca8935ab7b13014c888ad3effaca0d9, type: 3}
-  - {fileID: 1006209454, guid: 2f51449e94431e74d80df1e254498a22, type: 3}
-  - {fileID: 1144752563, guid: 4d9369fcc7302264ba958039b1405070, type: 3}
-  - {fileID: -1533348791, guid: db27fbca3ac89224891d9dad524010ed, type: 3}
-  - {fileID: -1983946296, guid: a9530abd2353f57468a08ecf2b72f803, type: 3}
-  - {fileID: -1297858419, guid: 6f45d358e7e9d3545a8dfb54cd3c7d56, type: 3}
-  - {fileID: -1343556281, guid: 66a40171e495d4c4486f03721376429c, type: 3}
-  - {fileID: -1050987745, guid: 9ab1dedecec7c7146a630766bb7c2f0e, type: 3}
-  - {fileID: 704462441, guid: 824023037a47fee42aba973af1db9222, type: 3}
-  - {fileID: 1825696992, guid: 22e6402fa50ef954298d4146a6ad8e78, type: 3}
-  - {fileID: -790540524, guid: d1c073b035fed0c428ba6b57344064c1, type: 3}
-  - {fileID: 1740973905, guid: bda29dcf400177f46b77988f8e6cc5c5, type: 3}
   profilePicture: {fileID: 1903570203}
 --- !u!1 &915820534
 GameObject:
@@ -1618,6 +1654,18 @@ MonoBehaviour:
       - m_Target: {fileID: 898221750}
         m_TargetAssemblyTypeName: CustomizePlayer, Assembly-CSharp
         m_MethodName: EnterLoading
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 727800430}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2515,6 +2563,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 727800430}
+        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2007489525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2964,3 +3024,4 @@ SceneRoots:
   - {fileID: 2116439836}
   - {fileID: 1801316077}
   - {fileID: 2020874626}
+  - {fileID: 727800431}

@@ -9,8 +9,8 @@ public class PlayerDataArray
 [System.Serializable]
 public class PlayerData
 {
-    public string _id;
-    public string playerName;
-    public string facultyNumber;
-    public int points;
+    public string _id {get; set;}
+    public string playerName {get; set;}
+    public string facultyNumber {get; set;}
+    public int points {get; set;}
 }
