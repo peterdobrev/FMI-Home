@@ -1,10 +1,12 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class TriggerAnimation : MonoBehaviour
 {
     // Reference to the Animator component
     private Animator animator;
-
+    int collisionsCounter = 0;
     private void Start()
     {
         // Get the Animator component from the game object
@@ -18,7 +20,7 @@ public class TriggerAnimation : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             // Set the Open trigger to start the opening animation
-            animator.SetTrigger("Open");
+            collisionsCounter++;
         }
     }
 
@@ -29,8 +31,19 @@ public class TriggerAnimation : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             // Set the Close trigger to start the closing animation
-            animator.ResetTrigger("Open"); // Optional: Reset the Open trigger
-            animator.SetTrigger("Close");
+                collisionsCounter--;
+        }
+    }
+
+    public void Update()
+    {
+        if(collisionsCounter > 0)
+        {
+            animator.SetBool("IsOpen", true);
+        }
+        else
+        {
+            animator.SetBool("IsOpen", false);
         }
     }
 }

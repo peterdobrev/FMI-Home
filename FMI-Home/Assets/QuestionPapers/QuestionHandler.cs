@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class QuestionHandler : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class QuestionHandler : MonoBehaviour
     private TextMeshProUGUI textAnswerA;
     [SerializeField]
     private TextMeshProUGUI textAnswerB;
+
+    public UnityEvent onCorrectAnswer;
+    public UnityEvent onWrongAnswer;
 
     void OnEnable()
     {
@@ -42,13 +46,24 @@ public class QuestionHandler : MonoBehaviour
     private void HandleWrongAnswer()
     {
         Debug.Log("Wrong Answer");
+        onWrongAnswer.Invoke();
+        StartCoroutine(SayAnswer("Wrong!"));
+    }
+
+    private IEnumerator SayAnswer(string text)
+    {
+        var tmp = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        tmp.text = text;
+        tmp.fontSize = 44;
+        yield return new WaitForSeconds(1f);
         gameObject.SetActive(false);
     }
 
     private void HandleCorrectAnswer()
     {
         Debug.Log("Correct Answer");
-        gameObject.SetActive(false);
+        onCorrectAnswer.Invoke();
+        StartCoroutine(SayAnswer("Correct!"));
     }
 
 }
